@@ -155,6 +155,21 @@
          [:a {:href "#M-Bf"} "B♭"] "-"
          [:a {:href "#M-B"}  "B"]
      ]
+     [:li "Les gammes pentatoniques majeures : "
+         [:a {:href "#P-C"}  "C"]  "-"
+         [:a {:href "#P-Df"} "D♭"] "-"
+         [:a {:href "#P-D"}  "D"]  "-"
+         [:a {:href "#P-Ef"} "E♭"] "-"
+         [:a {:href "#P-E"}  "E"]  "-"
+         [:a {:href "#P-F"}  "F"]  "-"
+         [:a {:href "#P-Fs"} "F♯"] "-"
+         [:a {:href "#P-Gf"} "G♭"] "-"
+         [:a {:href "#P-G"}  "G"]  "-"
+         [:a {:href "#P-Af"} "A♭"] "-"
+         [:a {:href "#P-A"}  "A"]  "-"
+         [:a {:href "#P-Bf"} "B♭"] "-"
+         [:a {:href "#P-B"}  "B"]
+     ]
      [:li [:a {:href "#contact"} "Contact"]]
    ]
 
@@ -232,6 +247,52 @@
    [:h2 {:id "M-B"}  "B"]  Fs1 Gs1 As1 (sep)
                            B1 Cs2 Ds2 E2 Fs2 Gs2 As2 (sep)
                            B2 Cs3 Ds3 E3 Fs3 Gs3 As3
+
+   [:h2 {:id "5ta-maj"} "Gammes pentatoniques majeures"]
+   [:h2 {:id "P-C"}  "C"]  E1 G1 A1 (sep)
+                           C2 D2 E2 G2 A2 (sep)
+                           C3 D3 E3 G3 A3
+   [:h2 {:id "P-Df"} "D♭"] F1 Af1 Bf1 (sep)
+                           Df2 Ef2 F2 Af2 Bf2 (sep)
+                           Df3 Ef3 F3 Af3 Bf3
+   [:h2 {:id "P-D"}  "D"]  E1 Fs1 A1 B1 (sep)
+                           D2 E2 Fs2 A2 B2 (sep)
+                           D3 E3 Fs3 A3
+   [:h2 {:id "P-Ef"} "E♭"] F1 G1 Bf1 C2 (sep)
+                           Ef2 F2 G2 Bf2 C3 (sep)
+                           Ef3 F3 G3 Bf3
+   [:h2 {:id "P-E"}  "E"]  E1 Fs1 Gs1 B1 Cs2 (sep)
+                           E2 Fs2 Gs2 B2 Cs3 (sep)
+                           E3 Fs3 Gs3
+   [:h2 {:id "P-F"}  "F"]  E1 (sep)
+                           F1 G1 A1 C2 D2 (sep)
+                           F2 G2 A2 C3 D3 (sep)
+                           F3 G3 A3
+   [:h2 {:id "P-Fs"} "F♯"] Fs1 Gs1 As1 Cs2 Ds2 (sep)
+                           Fs2 Gs2 As2 Cs3 Ds3 (sep)
+                           Fs3 Gs3 As3
+   [:h2 {:id "P-Gb"} "G♭"] Gf1 Af1 Bf1 Df2 Ef2 (sep)
+                           Gf2 Af2 Bf2 Df3 Ef3 (sep)
+                           Gf3 Af3 Bf3
+   [:h2 {:id "P-G"}  "G"]  E1 (sep)
+                           G1 A1 B1 D2 E2 (sep)
+                           G2 A2 B2 D3 E3 (sep)
+                           G3 A3
+   [:h2 {:id "P-Af"} "A♭"] F1 (sep)
+                           Af1 Bf1 C2 Ef2 F2 (sep)
+                           Af2 Bf2 C3 Ef3 F3 (sep)
+                           Af3 Bf3
+   [:h2 {:id "P-A"}  "A"]  E1 Fs1 (sep)
+                           A1 B1 Cs2 E2 Fs2 (sep)
+                           A2 B2 Cs3 E3 Fs3 (sep)
+                           A3
+   [:h2 {:id "P-Bf"} "B♭"] F1 G1 (sep)
+                           Bf1 C2 D2 F2 G2 (sep)
+                           Bf2 C3 D3 F3 G3 (sep)
+                           Bf3
+   [:h2 {:id "P-B"}  "B"]  Fs1 Gs1 (sep)
+                           B1 Cs2 Ds2 Fs2 Gs2 (sep)
+                           B2 Cs3 Ds3 Fs3 Gs3
 
    [:h2 {:id "contact"} "Contact"]
    [:p "Pour toute remarque ou suggestion, vous pouvez :"]
