@@ -144,7 +144,10 @@
    [:h2 "Table des matières"]
    [:ul
      [:li [:a {:href "#comment"} "Fonctionnement des schémas"]]
-     [:li [:a {:href "#chro"} "Gamme chromatique"]]
+     [:li [:a {:href "#chro"} "Gammes chromatiques"] " ("
+          [:a {:href "#chro-asc"} "asc"] " - "
+          [:a {:href "#chro-desc"} "desc"] ")"]
+     [:li [:a {:href "#une-pos"} "Notes par nombre de positions"]]
      [:li "Les gammes majeures : "
          [:a {:href "#M-C"}  "C"]  "-"
          [:a {:href "#M-Df"} "D♭"] "-"
@@ -206,6 +209,30 @@
                          E1 F1 Fs1 Gf1 G1 Gs1 Af1 A1 As1 Bf1 B1
    C2 Cs2 Df2 D2 Ds2 Ef2 E2 F2 Fs2 Gf2 G2 Gs2 Af2 A2 As2 Bf2 B2
    C3 Cs3 Df3 D3 Ds3 Ef3 E3 F3 Fs3 Gf3 G3 Gs3 Af3 A3 As3 Bf3
+
+   [:h2 {:id "chro-asc"} "Gamme chromatique ascendante"]
+                 E1 F1 Fs1 G1 Gs1 A1 As1 B1
+   C2 Cs2 D2 Ds2 E2 F2 Fs2 G2 Gs2 A2 As2 B2
+   C3 Cs3 D3 Ds3 E3 F3 Fs3 G3 Gs3 A3 As3
+
+   [:h2 {:id "chro-desc"} "Gamme chromatique descendante"]
+
+   Bf3 A3 Af3 G3 Gf3 F3 E3 Ef3 D3 Df3 C3
+   B2 Bf2 A2 Af2 G2 Gf2 F2 E2 Ef2 D2 Df2 C2
+   B1 Bf1 A1 Af1 G1 Gf1 F1 E1
+   [:h2 {:id "une-pos"} "Notes n’ayant qu’une position"]
+                         E1 F1 Fs1 Gf1 G1 Gs1 Af1 A1 As1 Bf1 B1
+   C2 Cs2 Df2 D2 Ds2 Ef2       Fs2 Gf2 G2
+
+   [:h2 {:id "deux-pos"} "Notes ayant deux positions"]
+                         E2 F2
+   C3 Cs3 Df3 Ds3 Ef3
+
+   [:h2 {:id "trois-pos"} "Notes ayant trois positions"]
+   D3 E3 F3 Fs3 Gf3 G3 A3
+
+   [:h2 {:id "quatre-pos"} "Notes ayant quatre positions"]
+   Gs3 Af3 As3 Bf3
 
    [:h2 {:id "maj"} "Gammes majeures"]
    [:h2 {:id "M-C"}  "C"]  E1 F1 G1 A1 B1 (sep)
