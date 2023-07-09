@@ -36,7 +36,8 @@
 
 (defn harm [h]
   ; original parenedit colors "#fab" "#fdb" "#ffd" "#dfb" "#cef" "#dcf" "#bbe"
-  (nth ["#f99" "#fdb" "#ffd" "#dfb" "#cef" "#dcf" "#a8c" "#75a" "#339"] (- h 1)))
+  (nth ["#f99" "#fdb" "#ffd" "#dfb" "#cef" "#dcf" "#a8c" "#75a" "#339" "#000"]
+       (- h 1)))
 
 (defn rect [h]
   [:svg {:width 20 :height 20}
@@ -130,8 +131,8 @@
 (def Gs3 (diag "G♯" [1 6  3 7  5 8  7 9]))
 (def Af3 (diag "A♭" [1 6  3 7  5 8  7 9]))
 (def A3  (diag "A"  [2 7  4 8  6 9]))
-(def As3 (diag "A♯" [1 7  3 8  5 9]))
-(def Bf3 (diag "B♭" [1 7  3 8  5 9]))
+(def As3 (diag "A♯" [1 7  3 8  5 9  7 10]))
+(def Bf3 (diag "B♭" [1 7  3 8  5 9  7 10]))
 
 (defn hello-world []
   [:div
