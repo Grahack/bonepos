@@ -40,8 +40,8 @@
        (- h 1)))
 
 (defn rect [h]
-  [:svg {:width 20 :height 20}
-    [:rect {:x 0 :y 0 :width 20 :height 20 :fill (harm h) :stroke "black"}]])
+  [:svg {:width 25 :height 25}
+    [:rect {:x 0 :y 0 :width 25 :height 25 :fill (harm h) :stroke "black"}]])
 
 (defn line [x1 y1 x2 y2]
   [:line {:x1 x1 :y1 y1 :x2 x2 :y2 y2}])
