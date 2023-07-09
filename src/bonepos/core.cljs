@@ -54,8 +54,12 @@
           (line (- x slide-sep) (+ y p4) (+ x slide-sep) (+ y p4))
           (line (- x slide-sep) (+ y p2) (+ x slide-sep) (+ y p2))]))
 
-(defn empty-slide []
-     [:svg {:width W :height H} (slide)])
+(defn empty-slide []; numeros
+     [:svg {:width (+ W 20) :height H}
+       [:g (slide)
+           (map #(identity [:text {:x 22 :y (+ 6 offset-t (pos %))
+                                   :font-size 20} (str %)])
+                (range 1 8))]])
 
 (defn sep []
   (let [x (+ 1 slide-sep) ; add 1 like (slide)
