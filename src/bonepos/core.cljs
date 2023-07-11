@@ -148,7 +148,7 @@
           [:a {:href "#chro-asc"} "asc"] " - "
           [:a {:href "#chro-desc"} "desc"] ")"]
      [:li [:a {:href "#une-pos"} "Notes par nombre de positions"]]
-     [:li "Les gammes majeures : "
+     [:li "Gammes majeures : "
          [:a {:href "#M-C"}  "C"]  "-"
          [:a {:href "#M-Df"} "D♭"] "-"
          [:a {:href "#M-D"}  "D"]  "-"
@@ -163,7 +163,7 @@
          [:a {:href "#M-Bf"} "B♭"] "-"
          [:a {:href "#M-B"}  "B"]
      ]
-     [:li "Les pentas majeures : "
+     [:li "Pentas majeures : "
          [:a {:href "#P-C"}  "C"]  "-"
          [:a {:href "#P-Df"} "D♭"] "-"
          [:a {:href "#P-D"}  "D"]  "-"
