@@ -2,8 +2,9 @@ dev:
 	lein fig:build
 prod:
 	chromium-browser --headless --dump-dom http://localhost:9500/ > index.html
-	sed '1d'  -i index.html
-	sed '14d' -i index.html
+	sed '12d' -i index.html  # remove line 12 three times
+	sed '12d' -i index.html  # removes the JS code for Fighwheel
+	sed '12d' -i index.html  # and some empty lines
 	git add index.html
 	git commit -m "Update prod"
 	git push origin main
