@@ -163,7 +163,7 @@
          [:a {:href "#M-Bf"} "B♭"] "-"
          [:a {:href "#M-B"}  "B"]
      ]
-     [:li "Les gammes pentatoniques majeures : "
+     [:li "Les pentas majeures : "
          [:a {:href "#P-C"}  "C"]  "-"
          [:a {:href "#P-Df"} "D♭"] "-"
          [:a {:href "#P-D"}  "D"]  "-"
