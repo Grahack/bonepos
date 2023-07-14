@@ -266,33 +266,39 @@
        "plus petite est mise en évidence."]
 
    [:h2 {:id "chro"} "Gamme chromatique"]
+   [:p "Il y a 44 notes pour 31 positions."]
                          E1 F1 Fs1 Gf1 G1 Gs1 Af1 A1 As1 Bf1 B1
    C2 Cs2 Df2 D2 Ds2 Ef2 E2 F2 Fs2 Gf2 G2 Gs2 Af2 A2 As2 Bf2 B2
    C3 Cs3 Df3 D3 Ds3 Ef3 E3 F3 Fs3 Gf3 G3 Gs3 Af3 A3 As3 Bf3
 
    [:h2 {:id "chro-asc"} "Gamme chromatique ascendante"]
+   [:p "Voici 31 notes."]
                  E1 F1 Fs1 G1 Gs1 A1 As1 B1
    C2 Cs2 D2 Ds2 E2 F2 Fs2 G2 Gs2 A2 As2 B2
    C3 Cs3 D3 Ds3 E3 F3 Fs3 G3 Gs3 A3 As3
 
    [:h2 {:id "chro-desc"} "Gamme chromatique descendante"]
-
+   [:p "Voici 31 notes."]
    Bf3 A3 Af3 G3 Gf3 F3 E3 Ef3 D3 Df3 C3
    B2 Bf2 A2 Af2 G2 Gf2 F2 E2 Ef2 D2 Df2 C2
    B1 Bf1 A1 Af1 G1 Gf1 F1 E1
    [:h2 {:id "une-pos"} "Notes n’ayant qu’une position"]
+   [:p "Il y en a 20, réparties sur 14 positions."]
                          E1 F1 Fs1 Gf1 G1 Gs1 Af1 A1 As1 Bf1 B1
    C2 Cs2 Df2 D2 Ds2 Ef2       Fs2 Gf2 G2
 
    [:h2 {:id "deux-pos"} "Notes ayant deux positions"]
+   [:p "Il y en a 13, réparties sur 9 positions."]
                          E2 F2
    Gs2 Af2 A2 As2 Bf2 B2
    C3 Cs3 Df3 Ds3 Ef3
 
    [:h2 {:id "trois-pos"} "Notes ayant trois positions"]
+   [:p "Il y en a 7, réparties sur 6 positions."]
    D3 E3 F3 Fs3 Gf3 G3 A3
 
    [:h2 {:id "quatre-pos"} "Notes ayant quatre positions"]
+   [:p "Il y en a 4, réparties sur 2 positions."]
    Gs3 Af3 As3 Bf3
 
    [:h2 {:id "maj"} "Gammes majeures"]
