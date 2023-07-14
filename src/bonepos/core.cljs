@@ -46,7 +46,7 @@
 (defn line [x1 y1 x2 y2]
   [:line {:x1 x1 :y1 y1 :x2 x2 :y2 y2}])
 
-(defn slide []
+(defn empty-slide []
   (let [x (+ 1 slide-sep) ; add 1 to not crop notes
         y offset-t]
       [:g (line x y x (+ y slide-h))
@@ -54,9 +54,16 @@
           (line (- x slide-sep) (+ y p4) (+ x slide-sep) (+ y p4))
           (line (- x slide-sep) (+ y p2) (+ x slide-sep) (+ y p2))]))
 
-(defn empty-slide []; numeros
+(defn empty-slide2 []
+  (let [x (+ 1 slide-sep) ; add 1 to not crop notes
+        y offset-t]
+      [:g (line x y x (+ y slide-h))
+          (line (- x slide-sep) (+ y p5) (+ x slide-sep) (+ y p5))
+          (line (- x slide-sep) (+ y p3) (+ x slide-sep) (+ y p3))]))
+
+(defn add-pos-numbers [slide]
      [:svg {:width (+ W 20) :height H}
-       [:g (slide)
+       [:g slide
            (map #(identity [:text {:x 22 :y (+ 6 offset-t (pos %))
                                    :font-size 20} (str %)])
                 (range 1 8))]])
@@ -82,7 +89,7 @@
   ([notes] (diag "" notes))  ; notes is like [p1 h1  p2 h2  p3 h3...]
   ([name notes]
      [:svg {:width W :height H}
-       [:g (slide)
+       [:g (empty-slide)
            (map #(identity (note-dot %)) (partition 2 notes))]
            (first-dot (first notes))
            [:text {:x 0 :y offset-name :font-size 20} name]]))
@@ -245,7 +252,10 @@
    [:p "La coulisse est représentée par un trait vertical, position 1 en bas, "
        "position 7 en haut. Des petits marqueurs indiquent les positions 2, 4 "
        "et 6."]
-   (empty-slide)
+   [:p "Ou alors, puisque la position 3 est en face du pavillon, c’est mieux "
+       "de mettre des marqueurs en position 3 et 5 ? Que préférez-vous ?"]
+   (add-pos-numbers (empty-slide))
+   (add-pos-numbers (empty-slide2))
    [:p "Comme sur le trombone, les positions vont en s’écartant."]
    [:p "Un point de couleur indique à la fois :"]
    [:ul
