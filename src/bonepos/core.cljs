@@ -258,7 +258,7 @@
                            Fs1 Gs1 As1 B1 Cs2 Ds2 Es2 (sep)
                            Fs2 Gs2 As2 B2 Cs3 Ds3 Es3 (sep)
                            Fs3 Gs3 As3
-   [:h2 {:id "M-Gb"} "G♭"] F1 (sep)
+   [:h2 {:id "M-Gf"} "G♭"] F1 (sep)
                            Gf1 Af1 Bf1 Cf2 Df2 Ef2 F2 (sep)
                            Gf2 Af2 Bf2 Cf3 Df3 Ef3 F3 (sep)
                            Gf3 Af3 Bf3
@@ -305,7 +305,7 @@
    [:h2 {:id "P-Fs"} "F♯"] Fs1 Gs1 As1 Cs2 Ds2 (sep)
                            Fs2 Gs2 As2 Cs3 Ds3 (sep)
                            Fs3 Gs3 As3
-   [:h2 {:id "P-Gb"} "G♭"] Gf1 Af1 Bf1 Df2 Ef2 (sep)
+   [:h2 {:id "P-Gf"} "G♭"] Gf1 Af1 Bf1 Df2 Ef2 (sep)
                            Gf2 Af2 Bf2 Df3 Ef3 (sep)
                            Gf3 Af3 Bf3
    [:h2 {:id "P-G"}  "G"]  E1 (sep)
