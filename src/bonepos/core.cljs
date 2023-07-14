@@ -286,6 +286,7 @@
 
    [:h2 {:id "deux-pos"} "Notes ayant deux positions"]
                          E2 F2
+   Gs2 Af2 A2 As2 Bf2 B2
    C3 Cs3 Df3 Ds3 Ef3
 
    [:h2 {:id "trois-pos"} "Notes ayant trois positions"]
