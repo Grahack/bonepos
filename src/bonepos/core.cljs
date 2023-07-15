@@ -15,7 +15,7 @@
 (def note-r (- slide-sep 1))
 (def offset-l 1) ; left, just for the notes
 (def offset-t (+ 1 note-r)) ; top
-(def offset-name (+ slide-h 35))
+(def offset-label (+ slide-h 35))
 (def coef-p1 0)
 (def coef-p2 0.12)
 (def coef-p3 0.26)
@@ -87,12 +87,12 @@
 
 (defn diag
   ([notes] (diag "" notes))  ; notes is like [p1 h1  p2 h2  p3 h3...]
-  ([name notes]
+  ([label notes]
      [:svg {:width W :height H}
        [:g (empty-slide)
            (map #(identity (note-dot %)) (partition 2 notes))]
            (first-dot (first notes))
-           [:text {:x 0 :y offset-name :font-size 20} name]]))
+           [:text {:x 0 :y offset-label :font-size 20} label]]))
 
 ; ♭ ♮ ♯ ø
 (def E1  (diag "E"  [7 1]))
