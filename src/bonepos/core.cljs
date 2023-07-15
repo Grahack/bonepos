@@ -88,13 +88,14 @@
 (defn slide-n-notes [label notes]
   [:g (empty-slide)
       (map #(identity (note-dot %)) (partition 2 notes))
-      (first-dot (first notes))
       [:text {:x 0 :y offset-label :font-size 20} label]])
 
 (defn diag
   ([notes] (diag "" notes))  ; notes is like [p1 h1  p2 h2  p3 h3...]
   ([label notes]
-     [:svg {:width W :height H} (slide-n-notes label notes)]))
+     [:svg {:width W :height H}
+       (slide-n-notes label notes)
+       (first-dot (first notes))]))
 
 ; ♭ ♮ ♯ ø
 (def E1  (diag "E"  [7 1]))
