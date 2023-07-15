@@ -62,11 +62,11 @@
           (line (- x slide-sep) (+ y p3) (+ x slide-sep) (+ y p3))]))
 
 (defn add-pos-numbers [slide]
-     [:svg {:width (+ W 20) :height H}
-       [:g slide
-           (map #(identity [:text {:x 22 :y (+ 6 offset-t (pos %))
-                                   :font-size 20} (str %)])
-                (range 1 8))]])
+  [:svg {:width (+ W 20) :height H}
+    [:g slide
+        (map #(identity [:text {:x 22 :y (+ 6 offset-t (pos %))
+                                :font-size 20} (str %)])
+             (range 1 8))]])
 
 (defn sep []
   (let [x (+ 1 slide-sep) ; add 1 like (slide)
