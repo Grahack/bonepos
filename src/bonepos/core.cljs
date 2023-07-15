@@ -268,6 +268,11 @@
          [:a {:href "#t-Bf"} "B♭"] "-"
          [:a {:href "#t-B"}  "B"]
      ]
+     [:li [:a {:href "#tricks"} "Ruses"]]
+       [:ul
+         [:li [:a {:href "#trick-do-re-mi"} "Do, Ré, Mi"]]
+         [:li [:a {:href "#trick-fa-la-do"} "Fa, La, Do"]]
+         [:li [:a {:href "#trick-5ta-min"}  "Penta mineure"]]]
      [:li [:a {:href "#contact"} "Contact"]]
    ]
 
@@ -608,6 +613,27 @@
    [:h2 {:id "t-B"}  "B"]  Fs1 (sep) B1
                            D2 Fs2 (sep) B2
                            D3 Fs3
+
+   [:h2 {:id "tricks"} "Ruses"]
+   [:h3 {:id "trick-do-re-mi"} "Do, Ré, Mi"]
+   (trick [Bf2 5 C3  6 D3  7]) (sep)
+   (trick [B2  4 Cs3 5 Ds3 6]) (sep)
+   (trick [C3  3 D3  4 E3  5]) (sep)
+   (trick [Df3 2 Ef3 3 F3  4]) (sep)
+   (trick [D3  1 E3  2 Fs3 3])
+   [:h3 {:id "trick-fa-la-do"} "Fa, La, Do, Fa"]
+   (trick [F2  1 A2  2 C3  3 F3  4]) (sep)
+   (trick [E2  2 Gs2 3 B2  4 E3  5]) (sep)
+   (trick [Ef2 3 G2  4 Bf2 5 Ef3 6]) (sep)
+   (trick [D2  4 Fs2 5 A2  6 D3  7]) (sep)
+   (trick [Df2 5 F2  6 Af2 7])
+   [:h3 {:id "trick-5ta-min"} "Penta mineure"]
+   [:p "♭7 1 ♭3 4 5 ♭7 1 ♭3 4"]
+   (trick [Ef2 3 F2  1 Af2 3 Bf2 1 C3  3 Ef3 3 F3  1 Af3 3 Bf3 1]) [:br]
+   (trick [D2  4 E2  2 G2  4 A2  2 B2  4 D3  4 E3  2 G3  4 A3  2]) [:br]
+   (trick [Df2 5 Ef2 3 Gf2 5 Af2 3 Bf2 5 Df3 5 Ef3 3 Gf3 5 Af3 3]) [:br]
+   (trick [C2  6 D2  4 F2  6 G2  4 A2  6 C3  6 D3  4 F3  6 G3  4]) [:br]
+   (trick [B1  7 Cs2 5 E2  7 Fs2 5 Gs2 7 B2  7 Cs3 5 E3  7 Fs3 5])
 
    [:h2 {:id "contact"} "Contact"]
    [:p "Pour toute remarque ou suggestion, vous pouvez :"]
