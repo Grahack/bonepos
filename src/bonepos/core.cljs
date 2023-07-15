@@ -271,6 +271,7 @@
      [:li [:a {:href "#tricks"} "Ruses"]]
        [:ul
          [:li [:a {:href "#trick-do-re-mi"} "Do, Ré, Mi"]]
+         [:li [:a {:href "trick-si-do-re-mi-fa"} "Si, Do, Ré, Mi, Fa"]]
          [:li [:a {:href "#trick-fa-la-do"} "Fa, La, Do"]]
          [:li [:a {:href "#trick-5ta-min"}  "Penta mineure"]]]
      [:li [:a {:href "#contact"} "Contact"]]
@@ -621,6 +622,12 @@
    (trick [C3  3 D3  4 E3  5]) (sep)
    (trick [Df3 2 Ef3 3 F3  4]) (sep)
    (trick [D3  1 E3  2 Fs3 3])
+   [:h3 {:id "trick-si-do-re-mi-fa"} "Si, Do, Ré, Mi, Fa"]
+   (trick [Bf2 1 C3  3 D3  1 Ef3 3 F3  1]) (sep)
+   (trick [A2  2 B2  4 Cs3 2 D3  4 E3  2]) (sep)
+   (trick [Af2 3 Bf2 5 C3  3 Df3 5 Ef3 3]) (sep)
+   (trick [G2  4 A2  6 B2  4 C3  6 D3  4]) (sep)
+   (trick [Gf2 5 Af2 7 Bf2 5 Cf3 7 Df3 5])
    [:h3 {:id "trick-fa-la-do"} "Fa, La, Do, Fa"]
    (trick [F2  1 A2  2 C3  3 F3  4]) (sep)
    (trick [E2  2 Gs2 3 B2  4 E3  5]) (sep)
