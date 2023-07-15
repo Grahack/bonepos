@@ -148,6 +148,26 @@
 (def As3 (diag "A♯" [1 7  3 8  5 9  7 10]))
 (def Bf3 (diag "B♭" [1 7  3 8  5 9  7 10]))
 
+(defn extract [diagrams]
+  ; extract the relevant SVG group from a 'diag' vector
+  ; and store them in another vector
+  (map #(nth % 2) diagrams))
+
+(defn translate [Tx svg-group]
+  [:g {:transform (str "translate(" (* W Tx) " 0)")} svg-group])
+
+(defn trick [data]
+  (let [part (partition 2 data)
+        wrapped-notes (map first part)
+        positions (map second part)
+        bold-dots (map bold-dot positions)
+        n (count wrapped-notes)
+        trick-W (* W n)
+        notes (extract wrapped-notes)]
+    [:svg {:width trick-W :height H}
+      (map translate (range n) notes)
+      (map translate (range n) bold-dots)]))
+
 (defn hello-world []
   [:div
    [:h1 "Schémas pour quelques gammes au trombone"]
