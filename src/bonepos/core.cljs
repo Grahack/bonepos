@@ -80,7 +80,7 @@
                 :r note-r
                 :fill (harm h)}]))
 
-(defn first-dot [p]
+(defn bold-dot [p]
       [:circle {:cx (+ offset-l slide-sep) :cy (+ offset-t (pos p))
                 :r note-r
                 :stroke-width 3 :fill "none"}])
@@ -95,7 +95,7 @@
   ([label notes]
      [:svg {:width W :height H}
        (slide-n-notes label notes)
-       (first-dot (first notes))]))
+       (bold-dot (first notes))]))
 
 ; ♭ ♮ ♯ ø
 (def E1  (diag "E"  [7 1]))
