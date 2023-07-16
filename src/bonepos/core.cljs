@@ -271,7 +271,7 @@
      [:li [:a {:href "#tricks"} "Ruses"]]
        [:ul
          [:li [:a {:href "#trick-do-re-mi"} "Do, Ré, Mi"]]
-         [:li [:a {:href "trick-si-do-re-mi-fa"} "Si, Do, Ré, Mi, Fa"]]
+         [:li [:a {:href "#trick-si-do-re-mi-fa"} "Si, Do, Ré, Mi, Fa"]]
          [:li [:a {:href "#trick-fa-la-do"} "Fa, La, Do"]]
          [:li [:a {:href "#trick-5ta-min"}  "Penta mineure"]]]
      [:li [:a {:href "#contact"} "Contact"]]
