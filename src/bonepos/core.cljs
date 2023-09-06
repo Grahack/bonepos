@@ -86,7 +86,7 @@
                 :stroke-width 3 :fill "none"}])
 
 (defn slide-n-notes [label notes]
-  [:g (empty-slide)
+  [:g (empty-slide2)
       (map #(identity (note-dot %)) (partition 2 notes))
       [:text {:x 0 :y offset-label :font-size 20} label]])
 
@@ -279,11 +279,8 @@
 
    [:h2 {:id "comment"} "Fonctionnement des schémas"]
    [:p "La coulisse est représentée par un trait vertical, position 1 en bas, "
-       "position 7 en haut. Des petits marqueurs indiquent les positions 2, 4 "
-       "et 6."]
-   [:p "Ou alors, puisque la position 3 est en face du pavillon, c’est mieux "
-       "de mettre des marqueurs en position 3 et 5 ? Que préférez-vous ?"]
-   (add-pos-numbers (empty-slide))
+       "position 7 en haut. Des petits marqueurs indiquent les positions 3 et "
+       "5."]
    (add-pos-numbers (empty-slide2))
    [:p "Comme sur le trombone, les positions vont en s’écartant."]
    [:p "Un point de couleur indique à la fois :"]
