@@ -43,8 +43,11 @@
   [:svg {:width 25 :height 25}
     [:rect {:x 0 :y 0 :width 25 :height 25 :fill (harm h) :stroke "black"}]])
 
-(defn line [x1 y1 x2 y2]
-  [:line {:x1 x1 :y1 y1 :x2 x2 :y2 y2}])
+(defn line
+  ([x1 y1 x2 y2]
+   (line x1 y1 x2 y2 1 "black"))
+  ([x1 y1 x2 y2 w color]
+   [:line {:x1 x1 :y1 y1 :x2 x2 :y2 y2 :stroke-width w :stroke color}]))
 
 (defn empty-slide []
   (let [x (+ 1 slide-sep) ; add 1 to not crop notes
@@ -168,6 +171,53 @@
       (map translate (range n) notes)
       (map translate (range n) bold-dots)]))
 
+(def topo-r 5)
+(def W-topo 250)
+(def W-topo2 (+ W-topo topo-r))
+(def H-topo 600)
+(def H-topo2 (- H-topo topo-r))
+(def step 25)
+
+(defn range1 [n]
+  (range 1 (+ 1 n)))
+
+(defn hp-to-point [[h p]]
+  (let [ps (* p step)]
+    (case h
+      7 [(- W-topo2 ps) (- (+ H-topo2 ps) 614)]  ; highest partial
+      6 [(- W-topo2 ps) (- (+ H-topo2 ps) 575)]
+      5 [(- W-topo2 ps) (- (+ H-topo2 ps) 520)]
+      4 [(- W-topo2 ps) (- (+ H-topo2 ps) 465)]
+      3 [(- W-topo2 ps) (- (+ H-topo2 ps) 385)]
+      2 [(- W-topo2 ps) (- (+ H-topo2 ps) 300)]
+      1 [(- W-topo2 ps) (- (+ H-topo2 ps) 200)])))
+
+(defn point [[x y]]
+  [:circle {:cx x :cy y :r topo-r :fill "black"}])
+
+(defn p-color [n]
+  ; original parenedit colors "#fab" "#fdb" "#ffd" "#dfb" "#cef" "#dcf" "#bbe"
+  (nth ["#f33" "#fb9" "#eea" "#cec" "#bdf" "#dcf" "#a8d"]
+       (- 7 n)))
+
+(defn trajet-l
+  ([h1 p1 h2 p2 color]
+   (trajet-l h1 p1 h2 p2 color 0))
+  ([h1 p1 h2 p2 color offset]
+  (let [[x1 y1] (hp-to-point [h1 p1])
+        [x2 y2] (hp-to-point [h2 p2])]
+     (line (+ x1 offset) y1 (+ x2 offset) y2 3 color))))
+
+(defn trajet-c [h1 p1 h2 p2 cx1 cy1 cx2 cy2 color]
+  (let [[x1 y1] (hp-to-point [h1 p1]) [x2 y2] (hp-to-point [h2 p2])]
+    [:path {:stroke-width 3 :stroke color :fill "none"
+            :d (str "M " x1 " " y1 " "    ; move to origin
+                    "C " (+ x1 cx1) " "   ; curve with control 1 (x)
+                         (+ y1 cy1) ", "  ;                      (y)
+                         (+ x2 cx2) " "   ; control 2 (x)
+                         (+ y2 cy2) ", "  ;           (y)
+                    x2 " " y2)}]))        ; destination (absolute positions)
+
 (defn hello-world []
   [:div
    [:h1 "Schémas pour quelques gammes au trombone"]
@@ -274,6 +324,8 @@
          [:li [:a {:href "#trick-si-do-re-mi-fa"} "Si, Do, Ré, Mi, Fa"]]
          [:li [:a {:href "#trick-fa-la-do"} "Fa, La, Do"]]
          [:li [:a {:href "#trick-5ta-min"}  "Penta mineure"]]]
+     [:li [:a {:href "#topologie"} "Topologie du trombone"]
+          " (visualisation des positions alternatives)"]
      [:li [:a {:href "#contact"} "Contact"]]
    ]
 
@@ -638,6 +690,77 @@
    (trick [Df2 5 Ef2 3 Gf2 5 Af2 3 Bf2 5 Df3 5 Ef3 3 Gf3 5 Af3 3]) [:br]
    (trick [C2  6 D2  4 F2  6 G2  4 A2  6 C3  6 D3  4 F3  6 G3  4]) [:br]
    (trick [B1  7 Cs2 5 E2  7 Fs2 5 Gs2 7 B2  7 Cs3 5 E3  7 Fs3 5])
+
+   [:h2 {:id "topologie"} "Topologie"]
+   [:p "Voici un schéma qui tente une visualisation des positions "
+       "alternatives au trombone."]
+   [:svg {:width W-topo :height H-topo}
+     ; p7
+     (trajet-l 1 7 2 7 (p-color 7))
+     (trajet-c 2 7 2 2 0 -40 -20 -20 (p-color 7))
+     (trajet-l 2 2 3 3 (p-color 7))
+     (trajet-l 3 3 4 4 (p-color 7))
+     (trajet-c 4 4 4 1 0 -30 -15 -20 (p-color 7))
+     (trajet-l 4 1 5 2 (p-color 7))
+     (trajet-l 5 2 6 3 (p-color 7) -2)
+     (trajet-c 6 3 6 1 0 -30 -25 -23 (p-color 7))
+     (trajet-l 6 1 7 1 (p-color 7) -2)
+     ; p6
+     (trajet-l 1 6 2 6 (p-color 6))
+     (trajet-c 2 6 2 1 0 -40 -20 -20 (p-color 6))
+     (trajet-l 2 1 3 2 (p-color 6))
+     (trajet-l 3 2 4 3 (p-color 6))
+     (trajet-l 4 3 5 3 (p-color 6) -1)
+     (trajet-c 5 3 5 1 0 -30 -15 -20 (p-color 6))
+     (trajet-l 5 1 6 2 (p-color 6) -2)
+     (trajet-l 6 2 7 2 (p-color 6) -3)
+     ; p5
+     (trajet-l 1 5 2 5 (p-color 5))
+     (trajet-l 2 5 3 5 (p-color 5))
+     (trajet-c 3 5 3 1 0 -30 -15 -20 (p-color 5))
+     (trajet-l 3 1 4 2 (p-color 5))
+     (trajet-l 4 2 5 2 (p-color 5) -1)
+     (trajet-l 5 2 6 3 (p-color 5) 2)
+     (trajet-c 6 3 6 1 0 -25 -17 -20 (p-color 5))
+     (trajet-l 6 1 7 1 (p-color 5) 1)
+     ; p4
+     (trajet-l 1 4 2 4 (p-color 4))
+     (trajet-l 2 4 3 4 (p-color 4))
+     (trajet-l 3 4 4 4 (p-color 4))
+     (trajet-c 4 4 4 1 0 -20 -10 -15 (p-color 4))
+     (trajet-l 4 1 5 1 (p-color 4) -1)
+     (trajet-l 5 1 6 2 (p-color 4) 2)
+     (trajet-l 6 2 7 2 (p-color 4))
+     ; p3
+     (trajet-l 1 3 2 3 (p-color 3))
+     (trajet-l 2 3 3 3 (p-color 3))
+     (trajet-l 3 3 4 3 (p-color 3))
+     (trajet-l 4 3 5 3 (p-color 3) 2)
+     (trajet-l 5 3 6 3 (p-color 3))
+     (trajet-c 6 3 6 1 0 -25 -12 -15 (p-color 3))
+     (trajet-l 6 1 7 1 (p-color 3) -5)
+     ; p2
+     (trajet-l 1 2 2 2 (p-color 2))
+     (trajet-l 2 2 3 2 (p-color 2))
+     (trajet-l 3 2 4 2 (p-color 2))
+     (trajet-l 4 2 5 2 (p-color 2) 1)
+     (trajet-l 5 2 6 2 (p-color 2))
+     (trajet-l 6 2 7 2 (p-color 2) 3)
+     ; p1
+     (trajet-l 1 1 2 1 (p-color 1))
+     (trajet-l 2 1 3 1 (p-color 1))
+     (trajet-l 3 1 4 1 (p-color 1))
+     (trajet-l 4 1 5 1 (p-color 1) 2)
+     (trajet-l 5 1 6 1 (p-color 1))
+     (trajet-l 6 1 7 1 (p-color 1) 4)
+     (map (comp point hp-to-point)
+          (concat (map vector (repeat 1) (range1 7))
+                  (map vector (repeat 2) (range1 7))
+                  (map vector (repeat 3) (range1 5))
+                  (map vector (repeat 4) (range1 4))
+                  (map vector (repeat 5) (range1 3))
+                  (map vector (repeat 6) (range1 3))
+                  (map vector (repeat 7) (range1 2))))]
 
    [:h2 {:id "contact"} "Contact"]
    [:p "Pour toute remarque ou suggestion, vous pouvez :"]
