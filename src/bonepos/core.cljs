@@ -691,6 +691,14 @@
    (trick [Df2 5 Ef2 3 Gf2 5 Af2 3 Bf2 5 Df3 5 Ef3 3 Gf3 5 Af3 3]) [:br]
    (trick [C2  6 D2  4 F2  6 G2  4 A2  6 C3  6 D3  4 F3  6 G3  4]) [:br]
    (trick [B1  7 Cs2 5 E2  7 Fs2 5 Gs2 7 B2  7 Cs3 5 E3  7 Fs3 5])
+   [:h3 {:id "trick-hijaz"} "Hijaz"]
+   [:p "1 ♭2 3 4"]
+   (trick [E2  7 F2  6 Gs2 7 A2  6]) (sep)
+   (trick [F2  6 Gf2 5 A2  6 Bf2 5]) (sep)
+   (trick [Fs2 5 G2  4 As2 5 B2  4]) (sep)
+   (trick [G2  4 Af2 3 B2  4 C3  3]) (sep)
+   (trick [Gs2 3 A2  2 Bs2 3 Cs3 2]) (sep)
+   (trick [A2  2 Bf2 1 Cs3 2 D3  1])
 
    [:h2 {:id "topologie"} "Topologie"]
    [:p "Voici un schéma qui tente une visualisation des positions "
