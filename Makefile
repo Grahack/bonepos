@@ -1,7 +1,7 @@
 dev:
 	lein fig:build
 prod:
-	chromium-browser --headless --dump-dom http://localhost:9500/ > index.html
+	chromium --headless --dump-dom http://localhost:9500/ > index.html
 	sed '12d' -i index.html  # remove line 12 three times
 	sed '12d' -i index.html  # removes the JS code for Fighwheel
 	sed '12d' -i index.html  # and some empty lines
