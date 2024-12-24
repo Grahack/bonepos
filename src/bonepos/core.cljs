@@ -132,6 +132,7 @@
 (def As2 (diag "A♯" [1 3  5 4]))
 (def Bf2 (diag "B♭" [1 3  5 4]))
 (def B2  (diag "B"  [4 4  7 5]))
+(def Bs2 (diag "B♯" [3 4  6 5]))
 (def Cf3 (diag "C♭" [4 4  7 5]))
 (def C3  (diag "C"  [3 4  6 5]))
 (def Cs3 (diag "C♯" [2 4  5 5]))
